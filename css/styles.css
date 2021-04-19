@@ -19,7 +19,7 @@
     height: 100vh;
     width: 70%;
     overflow: scroll;
-    padding: 50px;
+    padding: 20px;
     color: #000;
 }
 
@@ -33,7 +33,7 @@
 }
 
 table tr td{
-    width: 6rem;
+    min-width: 6rem;
 }
 
 .price{
@@ -41,4 +41,29 @@ table tr td{
     display: flex;
     justify-content: center;
     margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card{
+    float: left;
+    margin: 1rem;
+    height: 28rem;
+}
+
+.img-container{
+    height: 60%;
+}
+
+.card-img-top{
+    height: 13.406rem;
+}
+
+.actions{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn{
+    margin: 0.1rem;
 }
