@@ -5,9 +5,36 @@ const cars = [
         brand: 'McLaren',
         model: '720S',
         color: 'Anaranjado',
-        year: 2020,
+        year: 2019,
         price: 300000,
         photo: 'https://www.autobild.es/sites/autobild.es/public/dc/fotos/McLaren-720S-2018-C01.jpg'
+    },
+    
+    {
+        brand: 'Bugatti',
+        model: 'Divo',
+        color: 'Negro Metalico',
+        year: 2020,
+        price: 5000000,
+        photo: 'https://www.autobild.es/sites/autobild.es/public/styles/main_element/public/dc/fotos/Bugatti-Divo-2019-C01.jpg?itok=ZdnNuiy7'
+    },
+
+    {
+        brand: 'Ferrai',
+        model: 'F12 Berlinetta',
+        color: 'Rojo Clasico',
+        year: 2017,
+        price: 216000,
+        photo: 'https://www.autobild.es/sites/autobild.es/public/styles/main_element/public/dc/fotos/Ferrari-F12berlinetta_2013_01.jpg?itok=Ez6taqBQ'
+    },
+
+    {
+        brand: 'Maserati',
+        model: 'GranCabrio',
+        color: 'Rojo',
+        year: 2018,
+        price: 120000,
+        photo: 'https://www.autobild.es/sites/autobild.es/public/styles/main_element/public/dc/fotos/Maserati-GranCabrio_2012_01.jpg?itok=zC-Ak5Kb'
     }
 ];
 
@@ -37,7 +64,6 @@ let updateIndex;
 create_btn.addEventListener("click", function (event) {
     event.preventDefault();
 })
-
 
 
 ShowCars();
@@ -101,28 +127,32 @@ function ShowCreateBtn() {
 }
 
 function CleanInputs() {
-    brand_input.value='';
-    model_input.value='';
-    color_input.value='';
-    year_input.value='';
-    price_input.value='';
-    photo_input.value='';
+    brand_input.value = '';
+    model_input.value = '';
+    color_input.value = '';
+    year_input.value = '';
+    price_input.value = '';
+    photo_input.value = '';
 }
 
 function CreateCar() {
-    cars.push(
-        {
-            brand: brand_input.value,
-            model: model_input.value,
-            color: color_input.value,
-            year: parseInt(year_input.value),
-            price: parseInt(price_input.value),
-            photo: photo_input.value
-        }
-    );
+    if (brand_input.value != '' && model_input.value != '' && color_input.value != '' && year_input.value != '' && price_input.value != '' && photo_input.value != '') {
+        cars.push(
+            {
+                brand: brand_input.value,
+                model: model_input.value,
+                color: color_input.value,
+                year: parseInt(year_input.value),
+                price: parseInt(price_input.value),
+                photo: photo_input.value
+            }
+        );
     
-    CleanInputs();
-    ShowCars();
+        CleanInputs();
+        ShowCars();
+    }else{
+        alert('Es necesario llenar todos los campos');
+    }
 }
 
 function UpdateCatch(index) {
@@ -146,11 +176,12 @@ function UpdateCar() {
     CleanInputs();
     ShowCars();
     ShowCreateBtn();
-    alert('Actualización exitosa'); 
+    alert('Actualización exitosa');
 }
 
 function DeleteCar(index) {
     cars.splice(index, 1);
+    CleanInputs();
     ShowCars();
     alert('Haz eliminado un vehiculo');
 }
