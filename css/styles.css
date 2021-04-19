@@ -1,0 +1,44 @@
+.content{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    justify-content: flex-start;
+}
+
+.panel{
+    display: inline-block;
+    height: 100vh;
+    width: 30%;
+    padding: 20px;
+    background-color: #d13262;
+}
+
+.cars{
+    display: inline-block;
+    height: 100vh;
+    width: 70%;
+    overflow: scroll;
+    padding: 50px;
+    color: #000;
+}
+
+.btn.btn-success{
+    background-color: rgb(105, 197, 0);
+    border: solid 1px #fff;
+}
+
+.btn.btn-success:hover{
+    background-color: rgb(85, 148, 12);
+}
+
+table tr td{
+    width: 6rem;
+}
+
+.price{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
