@@ -65,9 +65,6 @@ create_btn.addEventListener("click", function (event) {
     event.preventDefault();
 })
 
-
-ShowCars();
-
 /*functions*/
 
 function ShowCars() {
